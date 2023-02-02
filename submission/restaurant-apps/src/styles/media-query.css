@@ -27,7 +27,7 @@
 @media (max-width: 649px) {
   .app-bar .app-bar__navigation {
     position: absolute;
-    top: 50px;
+    top: 62px;
     left: -280px;
     width: 250px;
     height: 100vh;
