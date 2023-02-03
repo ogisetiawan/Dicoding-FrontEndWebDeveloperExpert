@@ -1,9 +1,10 @@
-const DrawerInitiator = {
-  init({ button, drawer, hero, content }) {
-    button.addEventListener("click", (event) => {
+const Drawer = {
+  init({ hamburger, drawer, hero, content }) {
+    hamburger.addEventListener("click", (event) => {
       this._toggleDrawer(event, drawer);
     });
 
+    // ? close drawer when outside click navbar
     content.addEventListener("click", (event) => {
       this._closeDrawer(event, drawer);
     });
@@ -13,9 +14,9 @@ const DrawerInitiator = {
     });
   },
 
+  //? event
   _toggleDrawer(event, drawer) {
     event.stopPropagation();
-    console.log(event);
     drawer.classList.toggle("open");
   },
 
@@ -25,4 +26,4 @@ const DrawerInitiator = {
   },
 };
 
-export default DrawerInitiator;
+export default Drawer;
