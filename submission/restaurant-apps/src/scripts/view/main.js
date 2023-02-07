@@ -1,4 +1,6 @@
-import Drawer from "../component/drawer";
+import Drawer from "../utils/drawer";
+import "../component/main-content.js";
+import "../component/footer.js";
 
 class Main {
   constructor({ hamburger, drawer, hero, content }) {
@@ -17,7 +19,6 @@ class Main {
       hero: this._hero,
       content: this._content,
     });
-
   }
 }
 
