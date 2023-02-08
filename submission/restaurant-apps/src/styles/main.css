@@ -205,6 +205,8 @@ main {
 .restaurants {
   margin: 32px auto auto;
   text-align: left;
+  display: grid;
+  grid-row-gap: 16px;
 }
 
 .restaurant-item {
@@ -265,7 +267,9 @@ main {
   text-decoration: none;
   font-weight: 600;
   color: #CDAC81;
-  font-size: 26px;
+  font-size: 28px;
+  height: 44px;
+  display: inline-block;
 }
 
 .posts-item__description {

@@ -17,18 +17,18 @@ import("./data/DATA.json").then(({ default: data }) => {
   data.restaurants.forEach(function (restorant) {
     restorantList += `
         <article class="restaurant-item">
-					<a href="#">
-						<img src="${restorant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restorant.pictureId}" alt="${restorant.name}">
-					</a>
-					<div class="city">
-						<span>${restorant.city}</span>
-					</div>
-					<div class="posts-item__content">
-						<p class="posts-item__date">Rating <a href="#" class="posts-item__date__author">${restorant.rating}</a></p>
-						<h2 class="restaurant__name"><a href="#">${restorant.name}</a></h2>
-						<p class="posts-item__description">${restorant.description}</p>
-					</div>
-				</article>`;
+			<a href="#">
+				<img src="${restorant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restorant.pictureId}" alt="${restorant.name}">
+			</a>
+			<div class="city">
+				<span>${restorant.city}</span>
+			</div>
+			<div class="posts-item__content">
+				<p class="posts-item__date">Rating <span class="posts-item__date__author">${restorant.rating}</span></p>
+				<h2 class="restaurant__name"><a href="#">${restorant.name}</a></h2>
+				<p class="posts-item__description">${restorant.description}</p>
+			</div>
+		</article>`;
   });
   document.querySelector("#restaurants").innerHTML = restorantList;
 });
