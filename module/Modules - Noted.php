@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-02-23 14:10:45
+ * @Last Modified time: 2023-02-23 15:14:17
  */
 
 // @ Mobile First Approach
@@ -73,6 +73,7 @@
 //~ Service worker (API HTML5)
 //? web yang mampu diakses dalam keadaan tidak ada internet (offline) dan dibantu dengan Cache API dan fitur lainnya
 //? diprosess oleh browser pada background (seluruh request pada browser) hanya dapat dijalankan pada protokol HTTPS.
+//? bertindak sebagai proxy antara web browser dan web server. 
 //# prosses : BROWSER  <-> Service Worker <-> Server
 //# browser request ke SW ( SW checking in Cache API ) jika tidak ada request ke server, server response ke SW ( dan simpan ke Cache API sblm ke browser, jika sudah ada tak perlu lanjut ke server untuk request)
 //? SW berjalan sendiri ( without browser ) pd thread terpisah
@@ -105,3 +106,9 @@
 //? Cache First (Cache Fallback to Network): request akan diambil dari cache dulu, namun bila request tidak ditemukan pada cache, ia akan mengambil resource dari internet.
 //? Network first: selalu mengirim request ke internet response akan dimasukan ke dalam cache. Namun, bila request gagal karena jaringan terputus atau koneksi lambat, ia langsung dialihkan menggunakan cache
 //? #Stale While Revalidate: kita mengembalikan dulu data dari cache bila ada, sambil mengirim juga permintaan ke jaringan untuk memperbaharui data di dalam cache ( strategi unggul dalam hal kecepatan dan juga kontennya diperbaharui di belakang layar )
+//~ Workbox
+//? serangkaian modul yang menyederhanakan routing dan caching di service worker
+//? libarary untuk untuk implmentasi service worker
+//# Cara Penggunaan Workbox dengan Webpack
+//? generateSW dan injectManifest adalah build tool dari workboox
+//? workbox-window: merupakan serangkaian module workbox yang dijalankan di window browser
