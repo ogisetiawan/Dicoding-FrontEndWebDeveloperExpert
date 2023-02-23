@@ -31,7 +31,7 @@ module.exports = {
     // ? untuk build template html
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/templates/index.html'),
+      template: path.resolve(__dirname, 'src/templates/index.html')
     }),
     // ? untuk copy aset statis
     new CopyWebpackPlugin({

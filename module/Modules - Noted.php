@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-02-22 16:41:10
+ * @Last Modified time: 2023-02-23 14:10:45
  */
 
 // @ Mobile First Approach
@@ -92,3 +92,16 @@
 //? Event Message: Event in dapat kita manfaat untuk menerima informasi dari client ke Service Worker
 //? Event Sync; web API yang dapat kita gunakan untuk menunda sebuah aksi sampai perangkat terhubung dengan stabil ke jaringan internet. dengan identitas yg telah ditentukan
 //? Event Push; diinisiasi oleh backend server dan melewati push service yang ada di browser ( notifikasi browser, chat dll)
+//~ Cache API
+//? tempat penyimpanan lokal ( browser ) agar digunakan kembali sehingga pada next call tidak perlu send a request again
+//~ Menambahkan Resource ke Cache
+//# cache.add: membuat req ke server, dan save to cache, if request fail (200), then there si data to be save 
+//# cache.addAll: memasukkan banyak Request atau URL String sekaligus
+//# cache.keys(): untuk mencari nama cache
+//# caches.delete(): delete nama keys 
+//~ Caching Strategies
+//? Cache Only : mengembalikan aset yang ada di dalam cache, tanpa mengirim request ke jaringan ( e.g asset yg static seperti app shell) 
+//? Network only : mengirimkan permintaan ke internet tanpa menggunakan penyimpanan cache ( e.g fetch api data realltime)
+//? Cache First (Cache Fallback to Network): request akan diambil dari cache dulu, namun bila request tidak ditemukan pada cache, ia akan mengambil resource dari internet.
+//? Network first: selalu mengirim request ke internet response akan dimasukan ke dalam cache. Namun, bila request gagal karena jaringan terputus atau koneksi lambat, ia langsung dialihkan menggunakan cache
+//? #Stale While Revalidate: kita mengembalikan dulu data dari cache bila ada, sambil mengirim juga permintaan ke jaringan untuk memperbaharui data di dalam cache ( strategi unggul dalam hal kecepatan dan juga kontennya diperbaharui di belakang layar )
