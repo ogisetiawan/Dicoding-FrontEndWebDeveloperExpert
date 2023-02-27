@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-02-23 15:14:17
+ * @Last Modified time: 2023-02-27 22:50:05
  */
 
 // @ Mobile First Approach
@@ -112,3 +112,11 @@
 //# Cara Penggunaan Workbox dengan Webpack
 //? generateSW dan injectManifest adalah build tool dari workboox
 //? workbox-window: merupakan serangkaian module workbox yang dijalankan di window browser
+//~ IndexedDB
+//? built-in database dalam web browser ( NoSQL base )
+//? object-store: merupakan tempat penyimpanan satu jenis kumpulan data (seperti table)
+//? index: object store khusus yang dipakai untuk mengorganisir object store lain berdasarkan salah satu (atau beberapa) propertinya
+//? operation: read atau write database
+//? transaction: pembungkus sebuah operation atau sekelompok operation untuk menjaga integritas data
+//? cursor: objek yang bisa dimanfaatkan untuk melakukan iterasi pada kumpulan data di dalam database (membaca data satu persatu).
+//# npm install idb
