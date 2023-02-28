@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-02-27 22:50:05
+ * @Last Modified time: 2023-02-28 22:23:25
  */
 
 // @ Mobile First Approach
@@ -120,3 +120,5 @@
 //? transaction: pembungkus sebuah operation atau sekelompok operation untuk menjaga integritas data
 //? cursor: objek yang bisa dimanfaatkan untuk melakukan iterasi pada kumpulan data di dalam database (membaca data satu persatu).
 //# npm install idb
+//~ Web Socket
+//? komunikasi client ke server berjalan dua arah secara aktif, artinya server tdk perlu tunggu request dri client ( kapn saja ) dan slalu aktif

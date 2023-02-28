@@ -7,7 +7,8 @@ const CONFIG = {
   CACHE_NAME: new Date().toISOString(), // ? set secara dinamis untuk dev
   DATABASE_NAME: 'movie-catalogue-database',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'movies'
+  OBJECT_STORE_NAME: 'movies',
+  WEB_SOCKET_SERVER: 'wss://movies-feed.dicoding.dev' // ? rcc live feed (insecure url)
 }
 
 export default CONFIG
