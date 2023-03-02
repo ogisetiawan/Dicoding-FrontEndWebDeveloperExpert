@@ -1,5 +1,6 @@
 const path = require('path')
 const { merge } = require('webpack-merge')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
@@ -16,5 +17,9 @@ module.exports = merge(common, {
       }
     },
     compress: true // ? activated gzip compress, agar lebih efesien
-  }
+  },
+  // ? plugin untuk membersihkan folder dist
+  plugins: [
+    new CleanWebpackPlugin()
+  ]
 })

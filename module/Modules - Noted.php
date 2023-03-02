@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-02-28 22:23:25
+ * @Last Modified time: 2023-03-02 11:23:12
  */
 
 // @ Mobile First Approach
@@ -108,7 +108,7 @@
 //? #Stale While Revalidate: kita mengembalikan dulu data dari cache bila ada, sambil mengirim juga permintaan ke jaringan untuk memperbaharui data di dalam cache ( strategi unggul dalam hal kecepatan dan juga kontennya diperbaharui di belakang layar )
 //~ Workbox
 //? serangkaian modul yang menyederhanakan routing dan caching di service worker
-//? libarary untuk untuk implmentasi service worker
+//? library untuk untuk implmentasi service worker
 //# Cara Penggunaan Workbox dengan Webpack
 //? generateSW dan injectManifest adalah build tool dari workboox
 //? workbox-window: merupakan serangkaian module workbox yang dijalankan di window browser
@@ -122,3 +122,16 @@
 //# npm install idb
 //~ Web Socket
 //? komunikasi client ke server berjalan dua arah secara aktif, artinya server tdk perlu tunggu request dri client ( kapn saja ) dan slalu aktif
+//? WebSocket hanya mengirimkan data ke client (browser) ketika aplikasi atau website sedang dibuka (aktif)
+//~ Notification
+//? notification by browser, sblmnya perlu ijin dari client (browser) untuk activated
+//? menampilkan notifikasi dapat dilakukan jika web kita sudah menerapkan Service Worker
+//~ Web Push Notification
+//? mengirimkan informasi kepada users meskipun mereka tidak sedang membuka website kita ( teknologi push message )
+/// Alur Kerja
+//? 1. meminta perizinan (subscribe) ke push message dan mengirimkan PushSubcription ke server ( data informasi dari client)
+//? 2. send push message ke perangkat user (ditransitkan dulu ke push service, jadi server tidak kirim langsung ke client ) Firebase is push message
+//? 3.  receive push message melalui push event di berkas service worker
+//# VAPID keys adalah identitas unik untuk server
+//? * Server memicu push message -> push service akan menerima API call dan mengantrekan push message -> Push message ini akan tersedia di antrean hingga perangkat user dalam keadaan online -> push service dapat menyerahkan push message ke client
+// # npm install -D clean-webpack-plugin ( membersihkan seluruh berkas di direktori dist. )

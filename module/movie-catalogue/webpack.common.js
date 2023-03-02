@@ -1,12 +1,12 @@
 
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
-const path = require('path')
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'src/scripts/index.js'),
+    app: path.resolve(__dirname, 'src/scripts/index.js')
     // sw: path.resolve(__dirname, 'src/scripts/sw.js') // ? set entry point for service worker untuk bundling manual
   },
   output: {
@@ -43,10 +43,15 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/')
         }
       ]
-    }),
-    // ? konfiguration workbox genereteSW
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js' // ? berperan untuk mendefinisikan lokasi bundle dan  nama dari berkas service worker
     })
+    // ? konfiguration workbox buildTool genereteSW
+    // new WorkboxWebpackPlugin.GenerateSW({
+    //   swDest: './sw.bundle.js' // ? berperan untuk mendefinisikan lokasi bundle dan  nama dari berkas service worker
+    // })
+    // ? konfiguration workbox buildTool InjectManifest
+    // new WorkboxWebpackPlugin.InjectManifest({
+    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+    //   swDest: './sw.bundle.js'
+    // })
   ]
 }

@@ -1,4 +1,6 @@
+const path = require('path')
 const { merge } = require('webpack-merge')
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
@@ -19,5 +21,13 @@ module.exports = merge(common, {
         ]
       }
     ]
-  }
+  },
+  /* Tambahkan penerapan plugin di bawah di berkas ini */
+  plugins: [
+    // ? set service worker as production
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+      swDest: './sw.bundle.js'
+    })
+  ]
 })
