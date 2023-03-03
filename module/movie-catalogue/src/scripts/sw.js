@@ -8,6 +8,17 @@ self.addEventListener('install', () => {
   self.skipWaiting()
 })
 
-self.addEventListener('push', () => {
+self.addEventListener('push', (event) => {
   console.log('Service Worker: Pushed')
+  const dataJson = event.data.json()
+  const notification = {
+    title: dataJson.title,
+    options: {
+      body: dataJson.options.body,
+      icon: dataJson.options.icon,
+      image: dataJson.options.image
+    }
+  }
+  console.log(dataJson)
+  event.waitUntil(self.registration.showNotification(notification.title, notification.options))
 })

@@ -5,6 +5,7 @@ import '../styles/responsive.css'
 import App from './views/app'
 import swRegister from './utils/sw-register' // ? call service worker
 import WebSocketInitiator from './utils/websocket-initiator'
+import FooterToolsInitiator from './utils/footer-tools-initiator'
 import CONFIG from './globals/config'
 
 const app = new App({
@@ -19,8 +20,14 @@ window.addEventListener('hashchange', () => {
 })
 
 // ? when load
-window.addEventListener('load', () => {
+// ? agar proses registrasi service worker selesai diproses sebelum menjalankan kode program berikutnya
+window.addEventListener('load', async () => {
   app.renderPage()
-  swRegister() // ? register sw ketika load pertama kali
+  await swRegister() // ? register sw ketika load pertama kali
   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER) // ? init websocket
+
+  FooterToolsInitiator.init({
+    subscribeButton: document.querySelector('#subscribePushNotification'),
+    unsubscribeButton: document.querySelector('#unsubscribePushNotification')
+  })
 })
