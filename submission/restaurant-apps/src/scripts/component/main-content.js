@@ -1,13 +1,14 @@
 class MainContent extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" }); //? open shadow DOM
-  }
-  connectedCallback() {
-    this.render();
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' }) // ? open shadow DOM
   }
 
-  render() {
+  connectedCallback () {
+    this.render()
+  }
+
+  render () {
     /// merupakan selector untuk menunjuk element host
     this.shadowDOM.innerHTML = `
         <style>
@@ -35,8 +36,8 @@ class MainContent extends HTMLElement {
           }
       </style>
       <a href="#mainContent" class="skip-link">Go to content</a>
-    `;
+    `
   }
 }
 
-customElements.define("main-content", MainContent);
+customElements.define('main-content', MainContent)

@@ -1,19 +1,20 @@
-import "regenerator-runtime"; /* for async await transpile */
-import "../styles/main.css";
-import "../styles/media-query.css";
-import "@fortawesome/fontawesome-free/js/all.js";
-import Main from "./view/main.js";
+/* eslint-disable no-tabs */
+import 'regenerator-runtime' /* for async await transpile */
+import '../styles/main.css'
+import '../styles/responsive.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+import Main from './views/main.js'
 
-//? init component
+// ? init component
 const main = new Main({
-  hamburger: document.querySelector("#hamburgerButton"),
-  drawer: document.querySelector("#navigationDrawer"),
-  hero: document.querySelector("#hero"),
-  content: document.querySelector("#mainContent"),
-});
+  hamburger: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  hero: document.querySelector('#hero'),
+  content: document.querySelector('#mainContent')
+})
 
-import("./data/DATA.json").then(({ default: data }) => {
-  let restorantList = "";
+import('./data/DATA.json').then(({ default: data }) => {
+  let restorantList = ''
   data.restaurants.forEach(function (restorant) {
     restorantList += `
         <article class="restaurant-item">
@@ -28,9 +29,9 @@ import("./data/DATA.json").then(({ default: data }) => {
 				<h2 class="restaurant__name"><a href="#">${restorant.name}</a></h2>
 				<p class="posts-item__description">${restorant.description}</p>
 			</div>
-		</article>`;
-  });
-  document.querySelector("#restaurants").innerHTML = restorantList;
-});
+		</article>`
+  })
+  document.querySelector('#restaurants').innerHTML = restorantList
+})
 
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener('DOMContentLoaded', main)
