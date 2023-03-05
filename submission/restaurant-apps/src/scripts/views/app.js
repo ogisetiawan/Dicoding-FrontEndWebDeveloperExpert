@@ -1,18 +1,20 @@
 import Drawer from '../utils/drawer'
+import UrlParser from '../routes/url-parser'
+import routes from '../routes/routes'
 import '../component/main-content.js'
 import '../component/footer.js'
 
-class Main {
+class App {
   constructor ({ hamburger, drawer, hero, content }) {
     this._hamburger = hamburger
     this._drawer = drawer
     this._hero = hero
     this._content = content
-
-    this._initialMainShell()
+    this._initialAppShell()
   }
 
-  _initialMainShell () {
+  // ? init AppShell component
+  _initialAppShell () {
     Drawer.init({
       hamburger: this._hamburger,
       drawer: this._drawer,
@@ -20,6 +22,13 @@ class Main {
       content: this._content
     })
   }
+
+  async renderPage () {
+    const url = UrlParser.parseActiveUrlWithCombiner()
+    const page = routes[url]
+    this._content.innerHTML = await page.render()
+    await page.afterRender()
+  }
 }
 
-export default Main
+export default App
