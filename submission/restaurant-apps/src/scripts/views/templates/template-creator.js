@@ -17,7 +17,9 @@ const createRestaurantItemTemplate = (restaurant) => `
  	</article>
 `
 const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, reviews) => `
-  <h2 class="restaurant__name header">${restaurant.restaurant.name}</h2>
+  <div class="explore">
+    <h1 class="explore__label">${restaurant.restaurant.name}</h1>
+  </div>
   <div class="restaurant__content">
     <div class="restaurant__thumbnail">
         <img src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
