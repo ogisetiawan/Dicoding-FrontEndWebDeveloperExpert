@@ -285,3 +285,222 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+/* @ DETAIL PAGE */
+ 
+.post {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+ 
+.post .post__poster {
+  width: 100%;
+  max-width: 400px;
+}
+ 
+.post .post__info h4 {
+  margin: 8px 0;
+}
+
+.restaurant__title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.restaurant__poster {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: 0;
+  border-radius: 10px;
+}
+
+.restaurant__detail {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.restaurant__overview {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center; 
+}
+
+.restaurant__menu {
+  text-align: center;
+}
+
+.restaurant__menus {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.restaurant__foods {
+  text-align: center;
+}
+
+.restaurant__foods-item {
+  color: white;
+  background: black;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 10px 10px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.restaurant__drinks {
+  text-align: center;
+}
+
+.restaurant__drinks-item {
+  color: white;
+  background: black;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0 10px 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.heading {
+  margin-bottom: 25px;
+}
+
+.restaurant__reviews {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+
+
+/* @ REVIEW */
+
+.reviews {
+    margin: 32px auto auto;
+    text-align: left;
+}
+
+.reviews-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.reviews-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.reviews-item__content {
+    padding: 16px;
+}
+
+
+.reviews-item__date {
+    font-size: 16px;
+    font-weight: 2px;
+    color: #212121;
+}
+
+.reviews-item__date__author {
+    color: blue;
+    text-decoration: none;
+}
+
+.reviews-item__title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 16px;
+    transition: 0.3s opacity;
+}
+
+.reviews-item__title:hover {
+    opacity: 0.5;
+}
+
+.reviews-item__title a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+}
+
+.reviews-item__description {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5em;
+    display: inline-block;
+    width: 100%;
+    height: 3.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-lines: 2;
+}
+
+.input {
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  margin-bottom : 20px;
+  padding-left: 20px;
+}
+
+.input-resto {
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 50%;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom : 20px;
+  padding-left: 20px;
+}
+
+.text-area {
+    width: 100%;
+    height: 200px;
+    padding: 15px 22px;
+    border: 2px solid black;
+    border-radius: 4px;
+    resize: none;
+}
+
+.btnSubmit {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 0;
+  border-radius: 10px;
+}
+/* @ LIKE */
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00303F;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,45 +1,80 @@
+/* eslint-disable no-tabs */
 import CONFIG from '../../globals/config'
 
-// ? component UI for detail
-const createMovieDetailTemplate = (movie) => `
-  <h2 class="movie__title">${movie.title}</h2>
-  <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + movie.poster_path}" alt="${movie.title}" />
-  <div class="movie__info">
-    <h3>Information</h3>
-    <h4>Tagline</h4>
-    <p>${movie.tagline}</p>
-    <h4>Release Date</h4>
-    <p>${movie.release_date}</p>
-    <h4>Duration</h4>
-    <p>${movie.runtime} minutes</p>
-    <h4>Rating</h4>
-    <p>${movie.vote_average}</p>
-  </div>
-  <div class="movie__overview">
-    <h3>Overview</h3>
-    <p>${movie.overview}</p>
-  </div>
+const createRestaurantItemTemplate = (restaurant) => `
+<article class="restaurant-item">
+  <a href="/#/detail/${restaurant.id}">
+    <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
+  </a>
+  <div class="city">
+ 			<span>${restaurant.city}</span>
+ 		</div>
+ 		<div class="posts-item__content">
+ 			<p class="posts-item__date">Rating <span class="posts-item__date__author">${restaurant.rating}</span></p>
+ 			<h2 class="restaurant__name"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
+ 			<p class="posts-item__description">${restaurant.description}</p>
+ 		</div>
+ 	</article>
 `
-// ? component UI for now playing and upcoming
-const createMovieItemTemplate = (movie) => `
-  <div class="movie-item">
-    <div class="movie-item__header">
-      <img class="movie-item__header__poster" alt="${movie.title}"
-           src="${movie.backdrop_path ? CONFIG.BASE_IMAGE_URL + movie.backdrop_path : 'https://picsum.photos/id/666/800/450?grayscale'}">
-      <div class="movie-item__header__rating">
-        <p>⭐️<span class="movie-item__header__rating__score">${movie.vote_average}</span></p>
-      </div>
+const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, reviews) => `
+  <h2 class="restaurant__name header">${restaurant.restaurant.name}</h2>
+  <div class="restaurant__content">
+    <div class="restaurant__thumbnail">
+        <img src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
     </div>
-    <div class="movie-item__content">
-      <h3><a href="/#/detail/${movie.id}">${movie.title}</a></h3>
-      <p>${movie.overview}</p>
+    <div class="restaurant__detail">
+        <h4>City</h4>
+        ${restaurant.restaurant.city}
+        <h4>Address</h4>
+        <p>${restaurant.restaurant.address}</p>
+        <h4>Category</h4>
+        ${categories}
+        <h4>Rating</h4>
+        ${restaurant.restaurant.rating}
     </div>
   </div>
+  <hr>  
+  <div class="restaurant__overview">
+      <h3 class="heading">Overview</h3>
+      <p>${restaurant.restaurant.description}</p>
+  </div>
+  <hr>
+  <h3 class="restaurant__menu heading">Menu in Restaurant</h3>
+      <div class="restaurant__menus">
+        <div class="restaurant__foods">
+          <h4>Foods</h4>
+          ${foods}
+        </div>
+        <div class="restaurant__drinks">
+          <h4>Drinks</h4>
+          ${drinks}
+        </div>
+    </div>
+  <hr>
+  <h3 class="reviews heading">Customer's Review</h3>
+  <div class="reviews__content">
+      ${reviews}
+  </div>
+  <div class="restaurant__reviews">
+      <h3 class="restaurant__reviews">Add Review</h3>
+      <div class="review__input">
+        <div class="form-group">
+          <label for="enterName">Enter your name :</label>
+          <input id="enterName" type="text" class="input" aria-label="Enter your name here" placeholder="Enter your name here" required>
+        </div>
+        <div class="form-group">
+          <label for="enterReview">Enter your review :</label>
+          <textarea id="enterReview" class="text-area" aria-label="Enter your review here" placeholder="Enter your review here..." required></textarea>
+        </div>
+        <button id="btnSubmit" class="btnSubmit">Submit</button>
+      </div>    
+  </div>
 `
+
 // ? component like button
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+     <i class="far fa-heart" aria-hidden="true"></i>
   </button>
 `
 const createLikedButtonTemplate = () => `
@@ -49,8 +84,8 @@ const createLikedButtonTemplate = () => `
 `
 
 export {
-  createMovieItemTemplate,
-  createMovieDetailTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate
 }

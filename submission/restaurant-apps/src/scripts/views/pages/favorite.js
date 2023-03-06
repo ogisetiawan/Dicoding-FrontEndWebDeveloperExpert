@@ -1,8 +1,14 @@
 const Favorite = {
   async render () {
     return `
-        <h2>Favorite page</h2>
-      `
+    <section class="content">
+      <div class="explore">
+        <h1 class="explore__label">Favorite Restaurant</h1>
+      </div>
+      <div class="restaurants" id="fav-restaurants">
+      </div>
+    </section>
+    `
   },
 
   async afterRender () {
