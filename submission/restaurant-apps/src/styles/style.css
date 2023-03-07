@@ -320,7 +320,11 @@ footer {
 }
 
 .restaurant__detail {
+<<<<<<< HEAD
   margin: 30px 0px;
+=======
+  margin: 28px 0px;
+>>>>>>> b0ea9cae4fba81f6a843277482503ffe151798ac
   display: grid;
   grid-template-columns: 2fr 2fr;
 }
@@ -329,11 +333,19 @@ footer {
 }
 .restaurant__left{
   text-align: left;
+<<<<<<< HEAD
   line-height: 30px;
 }
 .restaurant__right{
   text-align: right;
   line-height: 30px;
+=======
+  line-height: 25px;
+}
+.restaurant__right{
+  text-align: right;
+  line-height: 25px;
+>>>>>>> b0ea9cae4fba81f6a843277482503ffe151798ac
 }
 
 .restaurant__overview {
