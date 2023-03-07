@@ -268,7 +268,6 @@ main {
 
 .posts-item__description {
   margin-top: 5px;
-  font-size: 12px;
   line-height: 1.5em;
   display: inline-block;
   width: 100%;
@@ -321,8 +320,20 @@ footer {
 }
 
 .restaurant__detail {
-  margin-top: 30px;
-  text-align: center;
+  margin: 30px 0px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+.font-weight{
+  font-weight: bold;
+}
+.restaurant__left{
+  text-align: left;
+  line-height: 30px;
+}
+.restaurant__right{
+  text-align: right;
+  line-height: 30px;
 }
 
 .restaurant__overview {
@@ -345,8 +356,8 @@ footer {
 }
 
 .restaurant__foods-item {
-  color: white;
-  background: black;
+  color: #ffffff;
+  background: #00303F;
   width: 100%;
   border: none;
   border-radius: 10px;
@@ -360,8 +371,8 @@ footer {
 }
 
 .restaurant__drinks-item {
-  color: white;
-  background: black;
+  color: #ffffff;
+  background: #CDAC81;
   width: 100%;
   border: none;
   border-radius: 10px;
@@ -396,8 +407,8 @@ footer {
 }
 
 .reviews-item {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
+    border-bottom: 0.8px solid #00303F;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -448,7 +459,7 @@ footer {
 }
 
 .input {
-  border: 2px solid black;
+  border: 1px solid #00303F;
   border-radius: 4px;
   width: 100%;
   height: 40px;
@@ -457,7 +468,7 @@ footer {
 }
 
 .input-resto {
-  border: 2px solid black;
+  border: 1px solid #00303F;
   border-radius: 4px;
   width: 50%;
   height: 40px;
@@ -470,22 +481,24 @@ footer {
     width: 100%;
     height: 200px;
     padding: 15px 22px;
-    border: 2px solid black;
+    border: 1px solid #00303F;
     border-radius: 4px;
     resize: none;
 }
 
 .btnSubmit {
-  background-color: black;
+  background-color: #00303f;
   border: none;
-  color: white;
+  color: #ffffff;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   border: 0;
   border-radius: 10px;
+  display: block;
+  margin-top: 10px;
+  width: 100%;
 }
 /* @ LIKE */
 .like {

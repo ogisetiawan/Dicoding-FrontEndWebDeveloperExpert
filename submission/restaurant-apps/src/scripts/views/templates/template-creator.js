@@ -25,47 +25,53 @@ const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, r
         <img src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
     </div>
     <div class="restaurant__detail">
-        <h4>City</h4>
-        ${restaurant.restaurant.city}
-        <h4>Address</h4>
-        <p>${restaurant.restaurant.address}</p>
-        <h4>Category</h4>
-        ${categories}
-        <h4>Rating</h4>
-        ${restaurant.restaurant.rating}
+      <div class="restaurant__left">
+        <p><span class="font-weight"><i class="fa fa-building"></i> City :</span> ${restaurant.restaurant.city}</p>
+        <p><span class="font-weight"><i class="fa fa-map"></i> Address : </span>${restaurant.restaurant.address}</p>
+      </div>
+      <div class="restaurant__right">
+          <p><span class="font-weight"><i class="fa fa-tag"></i> Category : </span>${categories}</p>
+          <p><span class="font-weight"><i class="fa fa-star"></i> Rating : </span>${restaurant.restaurant.rating}</p>
+      </div>
     </div>
   </div>
   <hr>  
   <div class="restaurant__overview">
-      <h3 class="heading">Overview</h3>
+      <div class="explore">
+        <h1 class="explore__label">Overview</h1>
+      </div>
       <p>${restaurant.restaurant.description}</p>
   </div>
   <hr>
-  <h3 class="restaurant__menu heading">Menu in Restaurant</h3>
+      <div class="explore">
+        <h1 class="explore__label">Restaurant Menu</h1>
+      </div>
       <div class="restaurant__menus">
         <div class="restaurant__foods">
-          <h4>Foods</h4>
+          <h4><i class="fa fa-burger"></i> Foods</h4>
           ${foods}
         </div>
         <div class="restaurant__drinks">
-          <h4>Drinks</h4>
+          <h4><i class="fa fa-mug-hot"></i> Drinks</h4>
           ${drinks}
         </div>
     </div>
   <hr>
-  <h3 class="reviews heading">Customer's Review</h3>
+  <div class="explore">
+    <h1 class="explore__label">Review</h1>
+  </div>
   <div class="reviews__content">
       ${reviews}
   </div>
   <div class="restaurant__reviews">
-      <h3 class="restaurant__reviews">Add Review</h3>
+      <div class="explore">
+        <h1 class="explore__label">Add Review</h1>
+      </div>
       <div class="review__input">
         <div class="form-group">
-          <label for="enterName">Enter your name :</label>
           <input id="enterName" type="text" class="input" aria-label="Enter your name here" placeholder="Enter your name here" required>
         </div>
         <div class="form-group">
-          <label for="enterReview">Enter your review :</label>
           <textarea id="enterReview" class="text-area" aria-label="Enter your review here" placeholder="Enter your review here..." required></textarea>
         </div>
         <button id="btnSubmit" class="btnSubmit">Submit</button>

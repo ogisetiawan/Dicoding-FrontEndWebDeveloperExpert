@@ -30,7 +30,7 @@ const Detail = {
     let reviews = ''
     detail.restaurant.categories.forEach((category) => {
       categories += `
-        <p>${category.name}</p>
+        ${category.name}
       `
     })
     detail.restaurant.menus.foods.forEach((food) => {
