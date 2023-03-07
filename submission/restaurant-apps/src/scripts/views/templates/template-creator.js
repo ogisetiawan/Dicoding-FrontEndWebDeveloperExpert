@@ -38,13 +38,13 @@ const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, r
   <hr>  
   <div class="restaurant__overview">
       <div class="explore">
-        <h1 class="explore__label">Overview</h1>
+        <h1 class="explore__label">Description</h1>
       </div>
       <p>${restaurant.restaurant.description}</p>
   </div>
   <hr>
       <div class="explore">
-        <h1 class="explore__label">Restaurant Menu</h1>
+        <h1 class="explore__label">Menu</h1>
       </div>
       <div class="restaurant__menus">
         <div class="restaurant__foods">
@@ -69,10 +69,10 @@ const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, r
       </div>
       <div class="review__input">
         <div class="form-group">
-          <input id="enterName" type="text" class="input" aria-label="Enter your name here" placeholder="Enter your name here" required>
+          <input id="enterName" type="text" class="input" placeholder="Your name" required>
         </div>
         <div class="form-group">
-          <textarea id="enterReview" class="text-area" aria-label="Enter your review here" placeholder="Enter your review here..." required></textarea>
+          <textarea id="enterReview" class="text-area" placeholder="Your Review" required></textarea>
         </div>
         <button id="btnSubmit" class="btnSubmit">Submit</button>
       </div>    

@@ -10,7 +10,9 @@ const Detail = {
       <section class="content">
         <div class="loader"></div>
         <div class="post"></div>
-        <h3 class="errorMessage">404 Not Found.</h3>
+        <div class="explore">
+          <h1 class="explore__label errorMessage">404 Not Found.</h1>
+        </div>
       </section>
       <div id="likeButtonContainer"></div>
     `

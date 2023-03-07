@@ -320,11 +320,7 @@ footer {
 }
 
 .restaurant__detail {
-<<<<<<< HEAD
   margin: 30px 0px;
-=======
-  margin: 28px 0px;
->>>>>>> b0ea9cae4fba81f6a843277482503ffe151798ac
   display: grid;
   grid-template-columns: 2fr 2fr;
 }
@@ -333,19 +329,11 @@ footer {
 }
 .restaurant__left{
   text-align: left;
-<<<<<<< HEAD
-  line-height: 30px;
-}
-.restaurant__right{
-  text-align: right;
-  line-height: 30px;
-=======
   line-height: 25px;
 }
 .restaurant__right{
   text-align: right;
   line-height: 25px;
->>>>>>> b0ea9cae4fba81f6a843277482503ffe151798ac
 }
 
 .restaurant__overview {
@@ -372,7 +360,7 @@ footer {
   background: #00303F;
   width: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 10px 10px 10px 0;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -387,7 +375,7 @@ footer {
   background: #CDAC81;
   width: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 10px 0 10px 10px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -507,7 +495,7 @@ footer {
   text-decoration: none;
   font-size: 16px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 50px;
   display: block;
   margin-top: 10px;
   width: 100%;
@@ -526,6 +514,43 @@ footer {
   border-radius: 50%;
   border: 0;
   font-size: 18px;
-  color: white;
+  color: #ffffff;
   cursor: pointer;
+}
+
+/* Home Loader */
+
+.home-loader {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: 60px 0 0 -60px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #00303F;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+
+/* @ loader */
+.loader {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin:-40px 0 0 -60px;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #00303F;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
