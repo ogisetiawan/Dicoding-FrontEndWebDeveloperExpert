@@ -1,6 +1,7 @@
 import UrlParser from '../../routes/url-parser' // ? call url segment
 import RestaurantSource from '../../data/restaurant-source'
-import { createRestaurantDetailTemplate, createLikeButtonTemplate  } from '../templates/template-creator'
+import { createRestaurantDetailTemplate } from '../templates/template-creator'
+// import LikeButtonInitiator from '../../utils/like-button-initiator'
 
 const Detail = {
   async render () {
@@ -11,7 +12,7 @@ const Detail = {
         <div class="loader"></div>
         <div class="post"></div>
         <div class="explore">
-          <h1 class="explore__label errorMessage">404 Not Found.</h1>
+          <h1 class="explore__label errorMessage">Internet connection appears to be offline</h1>
         </div>
       </section>
       <div id="likeButtonContainer"></div>
@@ -67,6 +68,7 @@ const Detail = {
     const enterName = document.querySelector('#enterName')
     const enterReview = document.querySelector('#enterReview')
     const btnSubmit = document.querySelector('.btnSubmit')
+
     // ? review
     btnSubmit.addEventListener('click', () => {
       const reviewJson = {
@@ -82,9 +84,19 @@ const Detail = {
       }
     })
 
-    // ? buttonLike
-    const likeButtonContainer = document.querySelector('#likeButtonContainer')
-    likeButtonContainer.innerHTML = createLikeButtonTemplate()
+    // // ? buttonLike
+    // LikeButtonInitiator.init({
+    //   likeButtonContainer: document.querySelector('#likeButtonContainer'),
+    //   restoerant: {
+    //     id: detail.id,
+    //     name: detail.name,
+    //     description: detail.description,
+    //     city: detail.city,
+    //     address: detail.address,
+    //     pictureId: detail.pictureId,
+    //     rating: detail.rating
+    //   }
+    // })
   }
 }
 

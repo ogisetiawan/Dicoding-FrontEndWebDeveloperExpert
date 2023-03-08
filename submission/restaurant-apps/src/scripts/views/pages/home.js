@@ -3,6 +3,8 @@ import { createRestaurantItemTemplate } from '../templates/template-creator'
 
 const Home = {
   async render () {
+    const hero = document.querySelector('.hero')
+    hero.style.display = 'flex'
     return `
     <section class="content">
       <div class="explore">
