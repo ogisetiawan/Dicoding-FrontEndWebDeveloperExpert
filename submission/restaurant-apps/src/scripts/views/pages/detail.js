@@ -1,7 +1,8 @@
 import UrlParser from '../../routes/url-parser' // ? call url segment
 import RestaurantSource from '../../data/restaurant-source'
 import { createRestaurantDetailTemplate } from '../templates/template-creator'
-// import LikeButtonInitiator from '../../utils/like-button-initiator'
+import LikeButtonPresenter from '../../utils/like-button-presenter'
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
 
 const Detail = {
   async render () {
@@ -85,18 +86,22 @@ const Detail = {
     })
 
     // // ? buttonLike
-    // LikeButtonInitiator.init({
-    //   likeButtonContainer: document.querySelector('#likeButtonContainer'),
-    //   restoerant: {
-    //     id: detail.id,
-    //     name: detail.name,
-    //     description: detail.description,
-    //     city: detail.city,
-    //     address: detail.address,
-    //     pictureId: detail.pictureId,
-    //     rating: detail.rating
-    //   }
-    // })
+    await LikeButtonPresenter.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
+      restaurant: {
+        id: detail.restaurant.id,
+        name: detail.restaurant.name,
+        pictureId: detail.restaurant.pictureId,
+        description: detail.restaurant.description,
+        city: detail.restaurant.city,
+        rating: detail.restaurant.rating,
+        categories: detail.categories,
+        foods: detail.foods,
+        drinks: detail.drinks,
+        reviews: detail.reviews
+      }
+    })
   }
 }
 
