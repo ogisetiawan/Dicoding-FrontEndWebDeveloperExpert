@@ -1,7 +1,7 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
-import FavoriteRestaurantSearchView from './favorite/favorite-restaurant-search-view'
-import FavoriteRestaurantShowPresenter from './favorite/favorite-restaurant-show-presenter'
-import FavoriteRestaurantSearchPresenter from './favorite/favorite-restaurant-search-presenter'
+import FavoriteRestaurantSearchView from './favorite/restaurant-search-view'
+import FavoriteRestaurantShowPresenter from './favorite/restaurant-show-presenter'
+import FavoriteRestaurantSearchPresenter from './favorite/restaurant-search-presenter'
 
 const view = new FavoriteRestaurantSearchView()
 
