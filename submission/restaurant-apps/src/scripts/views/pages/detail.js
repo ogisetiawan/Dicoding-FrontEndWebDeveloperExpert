@@ -66,11 +66,12 @@ const Detail = {
       drinks,
       reviews
     )
+
+    // ? addReview
     const enterName = document.querySelector('#enterName')
     const enterReview = document.querySelector('#enterReview')
     const btnSubmit = document.querySelector('.btnSubmit')
 
-    // ? review
     btnSubmit.addEventListener('click', () => {
       const reviewJson = {
         id: url.id,

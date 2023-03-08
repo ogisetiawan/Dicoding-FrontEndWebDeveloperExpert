@@ -17,20 +17,19 @@ class RestaurantSource {
     }
   }
 
-  // static async review (id) {
-  //   const options = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'X-Auth-Token': '12345'
-  //     },
-  //     body: JSON.stringify(id)
-  //   }
+  static async review (id) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    }
 
-  //   const response = await fetch(API_ENDPOINT.REVIEW, options)
-  //   const responseJson = await response.json()
-  //   return responseJson.customerReviews
-  // }
+    const response = await fetch(API_ENDPOINT.REVIEW, options)
+    const responseJson = await response.json()
+    return responseJson.customerReviews
+  }
 }
 
 export default RestaurantSource
