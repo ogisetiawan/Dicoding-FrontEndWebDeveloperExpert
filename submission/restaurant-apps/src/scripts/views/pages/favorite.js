@@ -1,3 +1,10 @@
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
+import FavoriteRestaurantSearchView from './favorite/favorite-restaurant-search-view'
+import FavoriteRestaurantShowPresenter from './favorite/favorite-restaurant-show-presenter'
+import FavoriteRestaurantSearchPresenter from './favorite/favorite-restaurant-search-presenter'
+
+const view = new FavoriteRestaurantSearchView()
+
 const Favorite = {
   async render () {
     const hero = document.querySelector('.hero')
@@ -15,7 +22,8 @@ const Favorite = {
   },
 
   async afterRender () {
-    // Fungsi ini akan dipanggil setelah render()
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb })
+    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb })
   }
 }
 
