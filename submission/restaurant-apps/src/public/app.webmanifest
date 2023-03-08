@@ -1,13 +1,12 @@
 {
   "id": "restorant-lite-os",
+  "start_url": "./index.html",
   "name": "Restoerant Lite",
   "short_name": "Resto Lite",
-  "theme_color": "#00303F",
-  "background_color": "#ffffff",
+  "description": "Bringing the best dining experience to your doorstep",
   "display": "standalone",
-  "orientation": "portrait",
-  "scope": "/",
-  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#00303F",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
