@@ -7,7 +7,8 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
-    "build-serve": "npm run build && npm run serve"
+    "build-serve": "npm run build && npm run serve",
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "ogistiawan21@gmail.com",

@@ -2,7 +2,6 @@ import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
 import FavoriteRestaurantSearchView from './favorite/restaurant-search-view'
 import FavoriteRestaurantShowPresenter from './favorite/restaurant-show-presenter'
 import FavoriteRestaurantSearchPresenter from './favorite/restaurant-search-presenter'
-
 const view = new FavoriteRestaurantSearchView()
 
 const Favorite = {

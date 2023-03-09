@@ -6,14 +6,14 @@ const createRestaurantItemTemplate = (restaurant) => `
     <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
   </a>
   <div class="city">
- 			<span>${restaurant.city}</span>
- 		</div>
- 		<div class="posts-item__content">
- 			<p class="posts-item__date">Rating <span class="posts-item__date__author">${restaurant.rating}</span></p>
- 			<h2 class="restaurant__name"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
- 			<p class="posts-item__description">${restaurant.description}</p>
- 		</div>
- 	</article>
+    <span>${restaurant.city}</span>
+  </div>
+  <div class="posts-item__content">
+  <p class="posts-item__date">Rating <span class="posts-item__date__author">${restaurant.rating}</span></p>
+  <h2 class="restaurant__name"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
+  <p class="posts-item__description">${restaurant.description}</p>
+  </div>
+  </article>
 `
 const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, reviews) => `
   <div class="explore">
