@@ -8,6 +8,17 @@ class MainContent extends HTMLElement {
     this.render()
   }
 
+  // ? event
+  set clickEvent (event) {
+    this._clickEvent = event
+    this.render()
+  }
+
+  // ? get value from event
+  get value () {
+    return this.shadowDOM.querySelector('.skip-link').value
+  }
+
   render () {
     /// merupakan selector untuk menunjuk element host
     this.shadowDOM.innerHTML = `
@@ -37,6 +48,7 @@ class MainContent extends HTMLElement {
       </style>
       <a href="#mainContent" class="skip-link">Go to content</a>
     `
+    this.shadowDOM.querySelector('.skip-link').addEventListener('click', this._clickEvent)
   }
 }
 
