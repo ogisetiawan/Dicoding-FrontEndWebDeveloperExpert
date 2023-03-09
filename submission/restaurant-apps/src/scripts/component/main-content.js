@@ -9,6 +9,7 @@ class MainContent extends HTMLElement {
   }
 
   // ? event
+  // eslint-disable-next-line accessor-pairs
   set clickEvent (event) {
     this._clickEvent = event
     this.render()
