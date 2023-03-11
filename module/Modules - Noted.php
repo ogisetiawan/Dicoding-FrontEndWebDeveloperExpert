@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-03-02 11:23:12
+ * @Last Modified time: 2023-03-11 23:13:58
  */
 
 // @ Mobile First Approach
@@ -135,3 +135,75 @@
 //# VAPID keys adalah identitas unik untuk server
 //? * Server memicu push message -> push service akan menerima API call dan mengantrekan push message -> Push message ini akan tersedia di antrean hingga perangkat user dalam keadaan online -> push service dapat menyerahkan push message ke client
 // # npm install -D clean-webpack-plugin ( membersihkan seluruh berkas di direktori dist. )
+
+// @ Automatis Testing
+//? Proses automasi testing pada sebuah code secara langsung
+//~ TDD ( Test Driven Development )
+//# Alur TDD
+//? Write the test : Tulis kode tes sebelum menulis kode lainnya. Pastikan kode tes ini gagal. Kalau tidak gagal, maka periksa kembali tes yang dibuat.
+//? Make it run : Ketika memperoleh tes yang merah, maka kita perlu membuatnya hijau. Kita menghijaukan tes menggunakan kode yang secukupnya saja.
+//? Make it right : Setelah kita tahu kode kita berjalan dengan benar, saatnya membuatnya baik. Salah satu trik yang kita pelajari adalah dengan mengurangi duplikasi kode. 
+//? stylecode clean untuk cek condition by loop
+// const detectTriangle = (sideA, sideB, sideC) => {
+//     [sideA, sideB, sideC].forEach((side) => {
+//       if (side < 1) {
+//         throw new Error('Strange Triangle');
+//       }
+//     });
+//   };
+//? testing automation : unit testing, intergration testing dan end to end testing
+//? Unit Testing adalah testing yang fokus menguji perilaku dari sebuah unit ( metode,module,object)
+//? intergration : Tes yang dibuat tidak hanya fokus pada perilaku object, object lain jg
+//? End-to-end Test adalah jenis tes di mana perilaku pengguna disimulasikan semuanya dari depan hingga belakang. 
+
+
+//@ Web Performance
+//? lighthouse dan pagespeed adalah tool yang dapat membantu untuk performa, SEO, PWA dll 
+//~ Web Vital
+//? Loading Performance - Seberapa cepat komponen UI tampil di layar?
+//? Responsiveness - Seberapa cepat halaman bereaksi terhadap input pengguna?
+//? Visual Stability - Apakah komponen UI bergeser ketika terdapat konten baru muncul?
+//~ Largest Contentful Paint (LCP)
+//? mengukur titik di mana elemen konten terbesar muncul di layar. ( konten terbesar )
+//! Website yang baik harus menampilkan web maks 2,5 detik
+//? faktor terbesar : server, proses render yg terblokir oleh css/js, ukuran, dan prosess rendering dari client
+//~ First Input Delay (FID)
+//? mengukur delay ketika pengguna pertama kali berinteraksi dengan komponen hingga browser memproses event handler
+//~ Cumulative Layout Shift (CLS)
+//? CLS : mengukur kestabilan layout yang ditampilkan, Google memperbolehkan pergeseran bila tidak lebih dari 10% dari ukuran layar
+//~ Image Optimize
+//? Optimisasi gambar dapat meliputi pemilihan format, resolusi, atau kompresi yang tepat
+//! Imagemin :Imagemin dapat mengkompresi berbagai tipe gambar dan cukup mudah diintegrasikan dengan build scripts dan build tools seperti webpack 
+//! npm install imagemin-webpack-plugin imagemin-mozjpeg@9.x.x --save-dev ( untuk jpeg)
+//~ Ubah Gif ke Video
+//! npm install fluent-ffmpeg --save-dev
+// * https://www.dicoding.com/academies/219/tutorials/9766?from=9761
+//~ Image Responsive
+/* <picture>
+  <source media="(max-width: 600px)" srcset="./path/to/images/image-small.jpg">
+  <img src="./path/to/images/image-large.jpg" 
+       alt="">
+</picture>
+*/
+//! npm install sharp ( tool yang dapat menset bbrpa variasi ukuran image )
+// * https://www.dicoding.com/academies/219/tutorials/9771?from=9770
+//~ WebP Image
+//? format baru yang tepat untuk menggantikan PNG & JPG pada website
+//? tetapi tidak semua browser support webp
+//! npm install imagemin-webp-webpack-plugin --save-dev
+// * https://www.dicoding.com/academies/219/tutorials/9781?from=9776
+//~ Lazy Loading
+//? teknik untuk memuat suatu element ketika dibutuhkan saja
+//? Lazysize : tool yang banyak digunakan untuk lazy loading
+//~ Optimize Bundle
+//? optimisi pada vendor ketika yg hanya digunakan saja, seperti moment.js kita dpt set waktu yg digunakan saja ( ID )
+//~ Bundle Analyzer
+//? membantu kita untuk menunjukan apa yang sebenarnya ada di dalam bundel sehingga kita bisa mencari tahu library atau module yang membuat bundle menjadi besar
+// * https://www.dicoding.com/academies/219/tutorials/9806?from=9801
+// ~ Code Splitting
+//? tool yang dapat memecah modul menjadi beberapa berkas bundle. Walaupun kita banyak menggunakan vendor code
+// ~ Split Chunks
+//? cara paling mudah dalam memecah module, optimasi dilakukan pada webpack
+//? sehingga function/module akan diload sesuai kebutuhan saja / per request
+
+
