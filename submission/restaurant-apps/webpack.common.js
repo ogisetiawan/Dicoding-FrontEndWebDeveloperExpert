@@ -43,7 +43,32 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
-      maximumFileSizeToCacheInBytes: 6000000
+      maximumFileSizeToCacheInBytes: 6000000,
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(list|detail))/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'restaurant-api',
+            expiration: {
+              maxEntries: 50,
+              maxAgeSeconds: 60 * 60 * 24 * 30
+            }
+          }
+        },
+        {
+          urlPattern: ({ request :Request }) => request.destination === 'image',
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'restaurant-image',
+            expiration: {
+              maxEntries: 50,
+              maxAgeSeconds: 60 * 60 * 24 * 30
+            }
+          }
+        }
+
+      ]
     })
   ]
 }
