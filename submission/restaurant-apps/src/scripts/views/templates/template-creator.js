@@ -3,7 +3,10 @@ import CONFIG from '../../globals/config'
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="restaurant-item">
   <a href="/#/detail/${restaurant.id}">
-    <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
+    <picture>
+      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+      <img src='${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}' class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
+    </picture>
   </a>
   <div class="city">
     <span>${restaurant.city}</span>
@@ -21,7 +24,10 @@ const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, r
   </div>
   <div class="restaurant__content">
     <div class="restaurant__thumbnail">
-        <img src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
+        <picture>
+          <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+          <img src='${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.pictureId}' class="restaurant__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL_LARGE + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
+        </picture>
     </div>
     <div class="restaurant__detail">
       <div class="restaurant__left">
