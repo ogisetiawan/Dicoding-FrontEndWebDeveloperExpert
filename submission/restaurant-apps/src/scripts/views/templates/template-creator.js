@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config'
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="restaurant-item">
   <a href="/#/detail/${restaurant.id}">
-    <img src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
+    <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="posts-item__thumbnail ls-is-cached lazyloaded" data-src="${restaurant.pictureId}" alt="${restaurant.name}">
   </a>
   <div class="city">
     <span>${restaurant.city}</span>
