@@ -79,10 +79,13 @@ const Detail = {
         review: enterReview.value
       }
       if (reviewJson.name === '' || reviewJson.review === '') {
+        alert('Form tidak boleh kosong!')
         return null
       } else {
-        RestaurantSource.review(reviewJson)
-        location.reload()
+        console.log(RestaurantSource.review(reviewJson))
+        setTimeout(() =>{
+          location.reload()
+        }, 1000)
       }
     })
 
