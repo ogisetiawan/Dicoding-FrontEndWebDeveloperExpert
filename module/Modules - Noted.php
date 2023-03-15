@@ -3,7 +3,7 @@
  * @Author: ogisetiawan21@gmail.com 
  * @Date: 2023-01-25 17:12:02 
  * @Last Modified by: ogisetiawan21@gmail.com
- * @Last Modified time: 2023-03-11 23:13:58
+ * @Last Modified time: 2023-03-14 22:16:18
  */
 
 // @ Mobile First Approach
@@ -152,9 +152,9 @@
 //     });
 //   };
 //? testing automation : unit testing, intergration testing dan end to end testing
-//? Unit Testing adalah testing yang fokus menguji perilaku dari sebuah unit ( metode,module,object)
+//? Unit Testing : testing yang fokus menguji perilaku dari sebuah unit ( metode,module,object)
 //? intergration : Tes yang dibuat tidak hanya fokus pada perilaku object, object lain jg
-//? End-to-end Test adalah jenis tes di mana perilaku pengguna disimulasikan semuanya dari depan hingga belakang. 
+//? End-to-end Test : jenis tes di mana perilaku pengguna disimulasikan semuanya dari depan hingga belakang. 
 
 
 //@ Web Performance
@@ -206,4 +206,22 @@
 //? cara paling mudah dalam memecah module, optimasi dilakukan pada webpack
 //? sehingga function/module akan diload sesuai kebutuhan saja / per request
 
-
+//@ Continuous Integration & Continuous Deployment
+//? Teknik yang dapat mempermudah dalam penerapan deployment
+//? Continues Intergration: tahapan proses pengujian secara otomatis pada repo central, tujuannya menemukan bug/error
+//? Continues Deployment: teknik deployment terhadap aplikasi secara otomatis jika hasil proses automated test berstatus hijau atau passed.
+//~ platform CI/CD
+//? Travis CI: mendukung proses development dengan melakukan proses build dan testing secara otomatis, menyediakan feedback mengenai status perubahan yang terjadi
+//? Jenkins: platform otomatisasi open source yang dapat digunakan untuk semua jenis pekerjaan, seperti building, testing, delivering/deploying aplikasi
+//? Github Action: menjalankan perintah seperti build dan testing secara otomatis.
+//? Netlify: satu layanan CD untuk repository dari berbagai git provider
+//~ Latihan CI di Github Action
+//? buat repo -> buat file yaml/yml di folder .github/workflows -> buat branch -> pull request to main branch
+//? https://www.dicoding.com/academies/219/tutorials/25470
+//? intinya agar proses automation testing akan langsung mengarah ke github, tanpa cek manual ( karma etc )
+//~ Latihan CD di Netlify
+//? prosess deployment langsung ke website, jika prosess automation telah berhasil (passed)
+//? https://www.dicoding.com/academies/219/tutorials/25480?from=25475 
+//# Environment Variable di Netlify
+//? variable yg digunakan untuk simpan data2 yang penting, biasanya file .env
+//! npm install dotenv-webpack --save-dev
