@@ -9,7 +9,8 @@
     "serve": "http-server dist --port 9000",
     "build-serve": "npm run build && npm run serve",
     "test": "karma start",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "ogistiawan21@gmail.com",
@@ -18,6 +19,7 @@
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
+    "codeceptjs": "^3.4.1",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.36.0",
@@ -38,6 +40,7 @@
     "karma-jasmine": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
+    "puppeteer": "^19.7.5",
     "style-loader": "^3.3.2",
     "webpack": "^5.76.1",
     "webpack-bundle-analyzer": "^4.8.0",
