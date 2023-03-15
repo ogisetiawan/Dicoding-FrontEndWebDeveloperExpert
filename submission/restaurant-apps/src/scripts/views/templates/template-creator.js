@@ -86,12 +86,12 @@ const createRestaurantDetailTemplate = (restaurant, categories, foods, drinks, r
 
 // ? component like button
 const createLikeRestaurantButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
-     <i class="far fa-heart" aria-hidden="true"></i>
+  <button aria-label="like this restaurant" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `
 const createUnlikeRestaurantButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `
