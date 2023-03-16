@@ -83,7 +83,7 @@ const Detail = {
         return null
       } else {
         console.log(RestaurantSource.review(reviewJson))
-        setTimeout(() =>{
+        setTimeout(() => {
           location.reload()
         }, 1000)
       }
